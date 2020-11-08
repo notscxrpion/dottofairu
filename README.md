@@ -1,3 +1,3 @@
 # dotfiles
 
-my dotfiles.
+those are my dotfiles.
