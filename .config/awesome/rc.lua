@@ -541,8 +541,8 @@ awful.spawn.with_shell("redshift -P -O 2500")
 beautiful.useless_gap = 5
 
 -- Windows Border
-beautiful.border_width = 10
-beautiful.border_normal ="#cecece"
+beautiful.border_width = 1
+beautiful.border_normal ="#a8a8a8"
 beautiful.border_focus  ="#cecece"
 beautiful.border_marked ="#cecece"
 beautiful.maximized_hide_border = false
