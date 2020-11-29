@@ -1,6 +1,6 @@
 <br>
 <p align="center">
-  <img src="https://i.imgur.com/PPTH3lA.png" alt="Ayame Nakiri DAISUKI!">
+  <img src="https://i.imgur.com/PPTH3lA.png" alt="Ayame Nakiri DAISUKI!" width="430" height="588">
   </p>
   <br>
   
