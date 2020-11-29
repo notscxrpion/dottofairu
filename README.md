@@ -1,6 +1,6 @@
-# dotfiles #
+# dottofairu #
 
-those are my dotfiles.
+those are my dottofairu.
 
 <br>
 
