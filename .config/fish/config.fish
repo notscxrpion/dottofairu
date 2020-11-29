@@ -62,4 +62,4 @@ bind '$' __history_previous_command_arguments
 ### END OF FUNCTIONS ###
 
 ### ALIASES ###
-alias dotfile='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias dotfile='/usr/bin/git --git-dir=$HOME/dottofairu/ --work-tree=$HOME'
