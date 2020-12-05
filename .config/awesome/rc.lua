@@ -184,6 +184,7 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
+            require("battery-widget") {},
             mytextclock,
            -- s.mylayoutbox,
         },
@@ -292,6 +293,12 @@ globalkeys = gears.table.join(
         function ()
             awful.util.spawn("firefox") end,
         {description = "firefox", group = "application"}),
+
+    -- flameshot
+        awful.key({}, "Print",
+        function ()
+            awful.util.spawn("flameshot gui") end,
+        {description = "flameshot", group = "application"}),
 
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
