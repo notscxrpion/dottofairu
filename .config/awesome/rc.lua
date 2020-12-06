@@ -76,7 +76,7 @@ awful.layout.layouts = {
     --awful.layout.suit.corner.nw,
     --awful.layout.suit.corner.ne,
     --awful.layout.suit.corner.sw,
-    --awful.layout.suit.corner.se,
+    --awful.layout.suit.se.corner,
 }
 -- }}}
 
@@ -168,6 +168,8 @@ awful.screen.connect_for_each_screen(function(s)
         buttons = tasklist_buttons
     }
 
+
+
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s })
 
@@ -183,7 +185,7 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            wibox.widget.systray(),
+            wibox.widget.systray({systray_icon_spacing = 2}),
             require("battery-widget") {},
             mytextclock,
            -- s.mylayoutbox,
@@ -298,7 +300,7 @@ globalkeys = gears.table.join(
         awful.key({}, "Print",
         function ()
             awful.util.spawn("flameshot gui") end,
-        {description = "flameshot", group = "application"}),
+        {description = "flameshot", group = "launcher"}),
 
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
@@ -544,6 +546,7 @@ awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("redshift -P -O 2500")
 awful.spawn.with_shell("xinput --set-prop 14 'libinput Accel Profile Enabled' 0, 1")
 awful.spawn.with_shell("xinput --set-prop 14 'libinput Accel Speed' 1")
+awful.spawn.with_shell("naughty.destroy_all_notifications")
 
 -- Gaps
 beautiful.useless_gap = 5
@@ -555,3 +558,4 @@ beautiful.border_focus  ="#cecece"
 beautiful.border_marked ="#cecece"
 beautiful.maximized_hide_border = false
 beautiful.fullscreen_hide_border = false
+
