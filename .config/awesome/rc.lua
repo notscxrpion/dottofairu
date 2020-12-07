@@ -242,7 +242,7 @@ s.mytasklist = awful.widget.tasklist {
     widget_template = {
         {
             wibox.widget.base.make_widget(),
-            forced_height = 0,
+            forced_height = -10,
             id            = 'background_role',
             widget        = wibox.container.background,
         },
@@ -263,7 +263,7 @@ s.mytasklist = awful.widget.tasklist {
 }
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s, bg ="#fff", fg = "#ff58ee" })
+    s.mywibox = awful.wibar({ position = "top", height = 18, screen = s, bg ="#fff", fg = "#ff58ee" })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
