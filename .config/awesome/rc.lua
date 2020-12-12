@@ -375,7 +375,7 @@ globalkeys = gears.table.join(
               end,
               {description = "restore minimized", group = "client"}),
 
-    -- rofi dmenu
+    -- rofi topbar
     awful.key({ modkey }, "r",
         function ()
                   awful.util.spawn("rofi -show drun -config ~/.config/rofi/themes/dmenu.rasi") end,
