@@ -375,16 +375,22 @@ globalkeys = gears.table.join(
               end,
               {description = "restore minimized", group = "client"}),
 
-    -- Dmenu
+    -- rofi dmenu
     awful.key({ modkey }, "r",
         function ()
-                  awful.util.spawn("dmenu_run") end,
-              {description = "dmenu_run", group = "launcher"}),
+                  awful.util.spawn("rofi -show drun -config ~/.config/rofi/themes/dmenu.rasi") end,
+              {description = "rofi topbar edition", group = "launcher"}),
+
+    -- rofi
+    awful.key({ modkey, "Shift" }, "r",
+        function ()
+            awful.util.spawn("rofi -show drun") end,
+            {description = "rofi -show drun", group = "launcher"}),
 
     -- Firefox
     awful.key({ modkey }, "b",
         function ()
-            awful.util.spawn("firefox") end,
+            awful.util.spawn("./Applications/Firefox-83.0_20201112153044-x86_64.AppImage") end,
         {description = "firefox", group = "application"}),
 
     -- flameshot
@@ -644,7 +650,7 @@ beautiful.useless_gap = 5
 -- Windows Border
 beautiful.border_width = 1
 beautiful.border_normal ="#a8a8a8"
-beautiful.border_focus  ="#cecece"
+beautiful.border_focus  ="#ff58ee"
 beautiful.border_marked ="#cecece"
 beautiful.maximized_hide_border = false
 beautiful.fullscreen_hide_border = false
