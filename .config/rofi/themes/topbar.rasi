@@ -1,0 +1,53 @@
+/**
+ * ROFI Color theme
+ * NAME: dmemu.rasi
+ * DESCRIPTION: This is a horizontal prompt like dmenu.
+ * AUTHOR: Scxrpion69
+ */
+
+* {
+    background-color:      White;
+    border-color:          Grey;
+    text-color:            Grey;
+    font:            "DejaVuSansMono 12";
+}
+
+#window {
+    anchor:     north;
+    location:   north;
+    width:      100%;
+    padding:    0px;
+    children:   [ horibox ];
+}
+
+#horibox {
+    orientation: horizontal;
+    children:   [ prompt, entry, listview ];
+}
+
+#prompt {
+    padding: 0px;
+    background-color: #5eedfb;
+    text-color: #ffffff;
+    font: "DejaVuSansMono 12";
+}
+
+#listview {
+    layout:     horizontal;
+    spacing:    4px;
+    lines:      100;
+}
+
+#entry {
+    padding: 0px 0px;
+    expand:     false;
+    width:      10em;
+}
+
+#element {
+    padding: 0px 0px;
+}
+#element selected {
+    background-color: #ff58ee;
+    text-color:       #ffffff;
+}
