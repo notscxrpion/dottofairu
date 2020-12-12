@@ -378,7 +378,7 @@ globalkeys = gears.table.join(
     -- rofi topbar
     awful.key({ modkey }, "r",
         function ()
-                  awful.util.spawn("rofi -show drun -config ~/.config/rofi/themes/dmenu.rasi") end,
+                  awful.util.spawn("rofi -show drun -config ~/.config/rofi/themes/topbar.rasi") end,
               {description = "rofi topbar edition", group = "launcher"}),
 
     -- rofi
