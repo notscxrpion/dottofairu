@@ -43,13 +43,21 @@ do
 end
 -- }}}
 
+-- personal variable
+local browser           = "firefox"
+local editor            = os.getenv("EDITOR") or "vim"
+local filemanager       = "pcmanfm"
+local mediaplayer       = "celluloid"
+local terminal          = "alacritty"
+local virtualmachine    = "virtualbox"
+
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
-editor = os.getenv("EDITOR") or "nano"
+editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -648,7 +656,7 @@ awful.spawn.with_shell("xinput --set-prop 14 'libinput Accel Speed' 1")
 beautiful.useless_gap = 5
 
 -- Windows Border
-beautiful.border_width = 1
+beautiful.border_width = 5
 beautiful.border_normal ="#a8a8a8"
 beautiful.border_focus  ="#ff58ee"
 beautiful.border_marked ="#cecece"
