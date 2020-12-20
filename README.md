@@ -11,7 +11,7 @@ those are my dottofairu.
 
 <br>
 
-##Essensharu##
+## Essensharu ##
 
 - rofi
 - pulseaudio & pavucontrol
