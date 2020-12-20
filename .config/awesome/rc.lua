@@ -651,6 +651,8 @@ awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("redshift -P -O 2500")
 awful.spawn.with_shell("xinput --set-prop 14 'libinput Accel Profile Enabled' 0, 1")
 awful.spawn.with_shell("xinput --set-prop 14 'libinput Accel Speed' 1")
+awful.spawn.with_shell("xinput --set-prop 13 'libinput Accel Profile Enabled' 0, 1")
+awful.spawn.with_shell("xinput --set-prop 13 'libinput Accel Speed' 1")
 
 -- Gaps
 beautiful.useless_gap = 5
