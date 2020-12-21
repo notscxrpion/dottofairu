@@ -29,6 +29,7 @@ those are my dottofairu.
 - JP font + DejaVu font + fonts in general + emoji
 - fish
 - alacrity
+- sxiv
 
 <br>
 
