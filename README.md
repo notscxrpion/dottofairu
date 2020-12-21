@@ -14,21 +14,21 @@ those are my dottofairu.
 ## Essensharu ##
 
 - rofi
-- pulseaudio & pavucontrol
+- PulseAudio & pavucontrol
 - redshift
 - firefox (just to install the appimage launcher and all the appimage shit)
 - flameshot
 - Chicago95
-- lightdm & startx (in case lightdm doesn't work)
-- doom emacs & vim
-- grub-customizer
-- pcmanfm
-- lxappearance
+- LightDM & startx (in case lightdm doesn't work)
+- Doom Emacs & vim
+- Grub Customizer
+- PCManFM
+- lxapparance
 - nitrogen
 - Enhanced Discord + Discord canary
 - JP font + DejaVu font + fonts in general + emoji
 - fish
-- alacrity
+- alacritty
 - sxiv
 
 <br>
