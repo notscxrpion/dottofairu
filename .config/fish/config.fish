@@ -64,6 +64,8 @@ bind '$' __history_previous_command_arguments
 ### ALIASES ###
 alias dotfile='/usr/bin/git --git-dir=$HOME/dottofairu/ --work-tree=$HOME'
 
+### Input Keys ###
+
 export GTK_IM_MODULE='fctix'
 export QT_IM_MODULE='fctix'
 export SDL_IM_MODULE='fctix'
