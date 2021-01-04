@@ -401,6 +401,12 @@ globalkeys = gears.table.join(
             awful.util.spawn("./Applications/Firefox-83.0_20201112153044-x86_64.AppImage") end,
         {description = "firefox", group = "application"}),
 
+    -- qutebrowser
+    awful.key({ modkey, "Shift" }, "b",
+        function ()
+            awful.util.spawn("qutebrowser") end,
+        {description = "qutebrowser", group = "application"}),
+
     -- flameshot
         awful.key({}, "Print",
         function ()
