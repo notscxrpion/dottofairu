@@ -31,9 +31,7 @@ those are my dottofairu.
 - fish
 - alacritty
 - sxiv
-- fctix
-- mozc
-- anthy
+- fctix + mozc + anthy
 - mpv & celluloid
 - youtube-dl
 
