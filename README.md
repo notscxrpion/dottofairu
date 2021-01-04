@@ -17,9 +17,10 @@ those are my dottofairu.
 - PulseAudio & pavucontrol
 - redshift
 - firefox (just to install the appimage launcher and all the appimage shit)
+- qutebrowser
 - flameshot
 - Chicago95
-- LightDM & startx (in case lightdm doesn't work)
+- LightDM
 - Doom Emacs & vim
 - Grub Customizer
 - PCManFM
@@ -30,6 +31,11 @@ those are my dottofairu.
 - fish
 - alacritty
 - sxiv
+- fctix
+- mozc
+- anthy
+- mpv & celluloid
+- youtube-dl
 
 <br>
 

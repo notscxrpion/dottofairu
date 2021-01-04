@@ -653,6 +653,7 @@ awful.spawn.with_shell("xinput --set-prop 14 'libinput Accel Profile Enabled' 0,
 awful.spawn.with_shell("xinput --set-prop 14 'libinput Accel Speed' 1")
 awful.spawn.with_shell("xinput --set-prop 13 'libinput Accel Profile Enabled' 0, 1")
 awful.spawn.with_shell("xinput --set-prop 13 'libinput Accel Speed' 1")
+awful.spawn.with_shell("fcitx -d")
 
 -- Gaps
 beautiful.useless_gap = 5
