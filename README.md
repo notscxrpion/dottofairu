@@ -29,7 +29,7 @@ those are my dottofairu.
 - Enhanced Discord + Discord canary
 - JP font + DejaVu font + fonts in general + emoji
 - fish
-- alacritty
+- kitty
 - sxiv
 - fctix + mozc + anthy
 - mpv & celluloid
