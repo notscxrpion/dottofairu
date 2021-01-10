@@ -48,7 +48,7 @@ local browser           = "firefox"
 local editor            = os.getenv("EDITOR") or "vim"
 local filemanager       = "pcmanfm"
 local mediaplayer       = "celluloid"
-local terminal          = "alacritty"
+local terminal          = "kitty"
 local virtualmachine    = "virtualbox"
 
 -- {{{ Variable definitions
@@ -56,7 +56,7 @@ local virtualmachine    = "virtualbox"
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "alacritty"
+terminal = "kitty"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
