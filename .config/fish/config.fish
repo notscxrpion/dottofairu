@@ -63,10 +63,13 @@ bind '$' __history_previous_command_arguments
 
 ### ALIASES ###
 alias dotfile='/usr/bin/git --git-dir=$HOME/dottofairu/ --work-tree=$HOME'
+alias ll='ls -lah'
 
 ### Input Keys ###
 
-export GTK_IM_MODULE='fctix'
-export QT_IM_MODULE='fctix'
 export SDL_IM_MODULE='fctix'
-export XMODIFIERS='@im=fctix'
+export XMODIFIERS='@im=fcitx'
+export GTK_IM_MODULE='fcitx'
+export QT_IM_MODULE='fcitx'
+export QT5_IM_MODULE='fcitx'
+export QT_QPA_PLATFORMTHEME='qt5ct'
