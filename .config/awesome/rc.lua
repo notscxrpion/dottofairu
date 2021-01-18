@@ -48,7 +48,7 @@ local browser           = "firefox"
 local editor            = os.getenv("EDITOR") or "vim"
 local filemanager       = "pcmanfm"
 local mediaplayer       = "celluloid"
-local terminal          = "kitty"
+local terminal          = "alacritty"
 local virtualmachine    = "virtualbox"
 
 -- {{{ Variable definitions
@@ -56,7 +56,7 @@ local virtualmachine    = "virtualbox"
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "kitty"
+terminal = "alacritty"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -286,6 +286,7 @@ s.mytasklist = awful.widget.tasklist {
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
+	    require("battery-widget") {},
             mytextclock,
            -- s.mylayoutbox,
         },
@@ -395,14 +396,8 @@ globalkeys = gears.table.join(
             awful.util.spawn("rofi -show drun") end,
             {description = "rofi -show drun", group = "launcher"}),
 
-    -- Firefox
-    awful.key({ modkey }, "b",
-        function ()
-            awful.util.spawn("./Applications/Firefox-83.0_20201112153044-x86_64.AppImage") end,
-        {description = "firefox", group = "application"}),
-
     -- qutebrowser
-    awful.key({ modkey, "Shift" }, "b",
+    awful.key({ modkey }, "b",
         function ()
             awful.util.spawn("qutebrowser") end,
         {description = "qutebrowser", group = "application"}),
@@ -659,7 +654,7 @@ awful.spawn.with_shell("xinput --set-prop 14 'libinput Accel Profile Enabled' 0,
 awful.spawn.with_shell("xinput --set-prop 14 'libinput Accel Speed' 1")
 awful.spawn.with_shell("xinput --set-prop 13 'libinput Accel Profile Enabled' 0, 1")
 awful.spawn.with_shell("xinput --set-prop 13 'libinput Accel Speed' 1")
-awful.spawn.with_shell("fcitx -d")
+awful.spawn.with_shell("fcitx5 -dr")
 
 -- Gaps
 beautiful.useless_gap = 5
