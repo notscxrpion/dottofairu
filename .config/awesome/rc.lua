@@ -639,9 +639,9 @@ client.connect_signal("request::titlebars", function(c)
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
--- client.connect_signal("mouse::enter", function(c)
---    c:emit_signal("request::activate", "mouse_enter", {raise = false})
--- end)
+ client.connect_signal("mouse::enter", function(c)
+    c:emit_signal("request::activate", "mouse_enter", {raise = false})
+ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
@@ -650,10 +650,10 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- Autostart Application
 awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("redshift -P -O 2500")
-awful.spawn.with_shell("xinput --set-prop 14 'libinput Accel Profile Enabled' 0, 1")
-awful.spawn.with_shell("xinput --set-prop 14 'libinput Accel Speed' 1")
-awful.spawn.with_shell("xinput --set-prop 13 'libinput Accel Profile Enabled' 0, 1")
-awful.spawn.with_shell("xinput --set-prop 13 'libinput Accel Speed' 1")
+--awful.spawn.with_shell("xinput --set-prop 14 'libinput Accel Profile Enabled' 0, 1")
+--awful.spawn.with_shell("xinput --set-prop 14 'libinput Accel Speed' 1")
+--awful.spawn.with_shell("xinput --set-prop 13 'libinput Accel Profile Enabled' 0, 1")
+--awful.spawn.with_shell("xinput --set-prop 13 'libinput Accel Speed' 1")
 awful.spawn.with_shell("fcitx5 -dr")
 
 -- Gaps
