@@ -16,7 +16,6 @@ those are my dottofairu.
 - rofi
 - PulseAudio & pavucontrol
 - redshift
-- firefox (just to install the appimage launcher and all the appimage shit)
 - qutebrowser
 - flameshot
 - Chicago95
@@ -29,11 +28,12 @@ those are my dottofairu.
 - Enhanced Discord + Discord canary
 - JP font + DejaVu font + fonts in general + emoji
 - fish
-- kitty
+- alacritty
 - sxiv
-- fctix + mozc + anthy
-- mpv & celluloid
+- fctix5 + mozc
+- mpv
 - youtube-dl
+- doas
 
 <br>
 
