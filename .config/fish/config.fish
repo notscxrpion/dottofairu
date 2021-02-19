@@ -16,13 +16,13 @@ function _is_git_dirty
 end
 
 function fish_prompt
-  set -l 62A (set_color 62A)
-  set -l 62A (set_color 62A)
+  set -l magenta (set_color -o magenta)
+  set -l magenta (set_color -o magenta)
 
   if [ (_git_branch_name) ]
-    echo -n -s "$62A><(((\"> "
+    echo -n -s "$magenta><(((\"> "
   else
-    echo -n -s "$62A><(((\"> "
+    echo -n -s "$magenta><(((\"> "
   end
 end
 ### END OF PROMPT ###
@@ -64,6 +64,7 @@ bind '$' __history_previous_command_arguments
 ### ALIASES ###
 alias dotfile='/usr/bin/git --git-dir=$HOME/dottofairu/ --work-tree=$HOME'
 alias ll='ls -lah'
+alias cc='curl rate.sx'
 
 ### Input Keys ###
 

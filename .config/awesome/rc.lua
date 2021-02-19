@@ -44,10 +44,10 @@ end
 -- }}}
 
 -- personal variable
-local browser           = "firefox"
-local editor            = os.getenv("EDITOR") or "vim"
+local browser           = "qutebrowser"
+local editor            = os.getenv("EDITOR") or "nvim"
 local filemanager       = "pcmanfm"
-local mediaplayer       = "celluloid"
+local mediaplayer       = "mpv"
 local terminal          = "alacritty"
 local virtualmachine    = "virtualbox"
 
@@ -57,7 +57,7 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
-editor = os.getenv("EDITOR") or "vim"
+editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -69,8 +69,9 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-    --awful.layout.suit.floating,
     awful.layout.suit.tile,
+    awful.layout.suit.floating,
+    --awful.layout.suit.tile,
     --awful.layout.suit.tile.left,
     --awful.layout.suit.tile.bottom,
     --awful.layout.suit.tile.top,
@@ -215,7 +216,8 @@ s.mytaglist = awful.widget.taglist {
         },
         id     = 'background_role',
         widget = wibox.container.background,
-    }
+    },
+    buttons = taglist_buttons,
 }
 
     -- Create a tasklist widget
@@ -235,7 +237,7 @@ s.mytasklist = awful.widget.tasklist {
                 forced_width  = 5,
                 forced_height = 24,
                 thickness     = 1,
-                color         = '#777777',
+                color         = '#ff58ee',
                 widget        = wibox.widget.separator
             },
             valign = 'center',
@@ -271,7 +273,7 @@ s.mytasklist = awful.widget.tasklist {
 }
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", height = 18, screen = s, bg ="#fff", fg = "#ff58ee" })
+    s.mywibox = awful.wibar({ position = "top", height = 18, screen = s, bg ="#fff", fg = "#777777" })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -285,13 +287,14 @@ s.mytasklist = awful.widget.tasklist {
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            wibox.widget.systray(),
             mytextclock,
-           -- s.mylayoutbox,
+            wibox.widget.systray(),
+            --s.mylayoutbox,
         },
     },
     bottom = 2, -- don't forget to increase wibar height
-        color = "#5eedfb",
+        --color = "#5eedfb",
+        color = "#ff0000",
      -- color = "ff58ee",
     widget = wibox.container.margin,
     }
@@ -649,21 +652,25 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- Autostart Application
 awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("redshift -P -O 2500")
-awful.spawn.with_shell("xinput --set-prop 4 'libinput Accel Profile Enabled' 0, 1")
-awful.spawn.with_shell("xinput --set-prop 4 'libinput Accel Speed' 1")
+awful.spawn.with_shell("xinput --set-prop 8 'libinput Accel Profile Enabled' 0, 0")
+awful.spawn.with_shell("xinput --set-prop 8 'libinput Accel Speed' 0")
+awful.spawn.with_shell("xrandr --output DP-1 --mode 1920x1080 --rate 239.76 --primary --output DP-2 --mode 1920x1080 --rate 60.00 --above DP-1")
 awful.spawn.with_shell("fcitx5 -dr")
+awful.spawn.with_shell("timidity -iA")
 
 -- Gaps
 beautiful.useless_gap = 5
 
 -- Windows Border
 beautiful.border_width = 5
-beautiful.border_normal ="#a8a8a8"
-beautiful.border_focus  ="#ff58ee"
+--beautiful.border_normal ="#a8a8a8"
+beautiful.border_normal ="#DBD8C4"
+-- beautiful.border_focus  ="#ff58ee"
+beautiful.border_focus  ="#FF0800"
 beautiful.border_marked ="#cecece"
 beautiful.maximized_hide_border = false
 beautiful.fullscreen_hide_border = false
 
 -- Widget placement
-beautiful.systray_icon_spacing = 5
+beautiful.systray_icon_spacing = 3
 beautiful.bg_systray = "#ffffff"
