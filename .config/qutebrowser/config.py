@@ -10,12 +10,8 @@
 #   qute://help/configuring.html
 #   qute://help/settings.html
 
-<<<<<<< HEAD
 # Change the argument to True to still load settings configured via autoconfig.yml
-config.load_autoconfig(False)
 
-=======
->>>>>>> b15671fc3e0c1e35fbaf1e40fe161dfcb02e86ef
 # Uncomment this to still load settings configured via autoconfig.yml
 # config.load_autoconfig()
 
@@ -25,12 +21,9 @@ config.load_autoconfig(False)
 c.aliases = {'q': 'quit', 'w': 'session-save', 'wq': 'quit --save'}
 
 # Setting dark mode
-<<<<<<< HEAD
 config.set("colors.webpage.darkmode.enabled", True)
 
 #c.content.fullscreen.window = True
-=======
->>>>>>> b15671fc3e0c1e35fbaf1e40fe161dfcb02e86ef
 #config.set("colors.webpage.darkmode.enabled", True)
 
 
@@ -143,11 +136,7 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 # Directory to save downloads to. If unset, a sensible OS-specific
 # default is used.
 # Type: Directory
-<<<<<<< HEAD
 c.downloads.location.directory = '/home/scxrpion/Downloads'
-=======
-c.downloads.location.directory = '/home/dj/Downloads'
->>>>>>> b15671fc3e0c1e35fbaf1e40fe161dfcb02e86ef
 
 # Search engines which can be used via the address bar.  Maps a search
 # engine name (such as `DEFAULT`, or `ddg`) to a URL with a `{}`
@@ -167,11 +156,7 @@ c.downloads.location.directory = '/home/dj/Downloads'
 # the search engine name to the search term, e.g. `:open google
 # qutebrowser`.
 # Type: Dict
-<<<<<<< HEAD
 c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'aw': 'https://wiki.archlinux.org/?search={}', 'gg': 'https://www.google.com/search?q={}', 're': 'https://www.reddit.com/r/{}', 'ub': 'https://www.urbandictionary.com/define.php?term={}', 'wiki': 'https://en.wikipedia.org/wiki/{}', 'yt': 'https://www.youtube.com/results?search_query={}', 'mal': 'https://myanimelist.net/search/all?q={}&cat=all', '9a': 'https://9anime.to/search?keyword={}', 'lyrics': 'https://genius.com/search?q={}'}
-=======
-c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'aw': 'https://wiki.archlinux.org/?search={}', 'gg': 'https://www.google.com/search?q={}', 're': 'https://www.reddit.com/r/{}', 'wiki': 'https://en.wikipedia.org/wiki/{}', 'yt': 'https://www.youtube.com/results?search_query={}', 'mal': 'https://myanimelist.net/search/all?q={}&cat=all', '9a': 'https://9anime.to/search?keyword={}'}
->>>>>>> b15671fc3e0c1e35fbaf1e40fe161dfcb02e86ef
 
 # Text color of the completion widget. May be a single color to use for
 # all columns or a list of three colors, one for each column.
