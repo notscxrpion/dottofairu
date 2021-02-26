@@ -3,16 +3,16 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-#env:
+env:
   # TERM variable
   #
   # This value is used to set the `$TERM` environment variable for
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  #TERM: alacritty
+  TERM: alacritty
 
-#window:
+window:
   # Window dimensions (changes require restart)
   #
   # Specified in number of columns/lines, not pixels.
@@ -33,7 +33,7 @@
   #
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
-  #padding:
+  padding:
     x: 6
     y: 6
 
@@ -160,11 +160,11 @@
 #draw_bold_text_with_bright_colors: false
 
 # Colors (Tomorrow Night)
-#colors:
+colors:
   # Default colors
-  #primary:
-  #  background: '#1d1f21'
-  #  foreground: '#c5c8c6'
+  primary:
+    background: '#1d1f21'
+    foreground: '#c5c8c6'
 
     # Bright and dim foreground colors
     #

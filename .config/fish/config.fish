@@ -63,8 +63,15 @@ bind '$' __history_previous_command_arguments
 
 ### ALIASES ###
 alias dotfile='/usr/bin/git --git-dir=$HOME/dottofairu/ --work-tree=$HOME'
-alias ll='ls -lah'
+#alias ll='ls -lah'
 alias cc='curl rate.sx'
+
+# Changing "ls" to "exa"
+alias ls='exa -al --color=always --group-directories-first' # my preferred listing
+alias la='exa -a --color=always --group-directories-first'  # all files and dirs
+alias ll='exa -l --color=always --group-directories-first'  # long format
+alias lt='exa -aT --color=always --group-directories-first' # tree listing
+alias l.='exa -a | egrep "^\."'
 
 ### Input Keys ###
 
