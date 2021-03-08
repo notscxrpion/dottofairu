@@ -20,12 +20,12 @@ those are my dottofairu.
 - flameshot
 - Chicago95
 - LightDM
-- Doom Emacs & vim
+- Doom Emacs & neovim
 - Grub Customizer
 - PCManFM
 - lxapparance
 - nitrogen
-- Enhanced Discord + Discord canary
+- Discord canary
 - JP font + DejaVu font + fonts in general + emoji
 - fish
 - alacritty
