@@ -656,6 +656,8 @@ awful.spawn.with_shell("xinput --set-prop 8 'libinput Accel Profile Enabled' 0, 
 awful.spawn.with_shell("xinput --set-prop 8 'libinput Accel Speed' 0")
 awful.spawn.with_shell("xrandr --output DP-1 --mode 1920x1080 --rate 239.76 --primary --output DP-2 --mode 1920x1080 --rate 60.00 --above DP-1")
 awful.spawn.with_shell("fcitx5 -dr")
+awful.spawn.with_shell("liquidctl set led color fixed ffffff")
+awful.spawn.with_shell("openrgb -d 0 -m Direct -c ffffff -d 1 -m Direct -c ffffff")
 
 -- Gaps
 beautiful.useless_gap = 5

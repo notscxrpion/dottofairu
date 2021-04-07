@@ -156,7 +156,7 @@ c.downloads.location.directory = '/home/scxrpion/Downloads'
 # the search engine name to the search term, e.g. `:open google
 # qutebrowser`.
 # Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'aw': 'https://wiki.archlinux.org/?search={}', 'gg': 'https://www.google.com/search?q={}', 're': 'https://www.reddit.com/r/{}', 'ub': 'https://www.urbandictionary.com/define.php?term={}', 'wiki': 'https://en.wikipedia.org/wiki/{}', 'yt': 'https://www.youtube.com/results?search_query={}', 'mal': 'https://myanimelist.net/search/all?q={}&cat=all', '9a': 'https://9anime.to/search?keyword={}', 'lyrics': 'https://genius.com/search?q={}', 'pdb': 'https://www.protondb.com/search?q={}'}
+c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'aw': 'https://wiki.archlinux.org/?search={}', 'gg': 'https://www.google.com/search?q={}', 're': 'https://www.reddit.com/r/{}', 'ub': 'https://www.urbandictionary.com/define.php?term={}', 'wiki': 'https://en.wikipedia.org/wiki/{}', 'yt': 'https://www.youtube.com/results?search_query={}', 'mal': 'https://myanimelist.net/search/all?q={}&cat=all', '9a': 'https://9anime.to/search?keyword={}', 'lyrics': 'https://genius.com/search?q={}', 'pdb': 'https://www.protondb.com/search?q={}', 'dz': 'https://www.deezer.com/search/{}'}
 
 # Text color of the completion widget. May be a single color to use for
 # all columns or a list of three colors, one for each column.
