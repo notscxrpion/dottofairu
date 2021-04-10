@@ -294,8 +294,9 @@ s.mytasklist = awful.widget.tasklist {
     },
     bottom = 2, -- don't forget to increase wibar height
         --color = "#5eedfb",
-        color = "#ff0000",
-     -- color = "ff58ee",
+        --color = "#ff0000",
+        --color = "#ff58ee",
+        color = "#a300ff",
     widget = wibox.container.margin,
     }
 end)
@@ -656,8 +657,8 @@ awful.spawn.with_shell("xinput --set-prop 8 'libinput Accel Profile Enabled' 0, 
 awful.spawn.with_shell("xinput --set-prop 8 'libinput Accel Speed' 0")
 awful.spawn.with_shell("xrandr --output DP-1 --mode 1920x1080 --rate 239.76 --primary --output DP-2 --mode 1920x1080 --rate 60.00 --above DP-1")
 awful.spawn.with_shell("fcitx5 -dr")
-awful.spawn.with_shell("liquidctl set led color fixed ffffff")
-awful.spawn.with_shell("openrgb -d 0 -m Direct -c ffffff -d 1 -m Direct -c ffffff")
+awful.spawn.with_shell("openrgb -d 0 -m Direct -c ff8d00 -d 1 -m Direct -c ff8d00 -d 2 -m Direct -c ff0000")
+awful.spawn.with_shell("liquidctl set led color fixed c900ff")
 
 -- Gaps
 beautiful.useless_gap = 5
@@ -666,8 +667,9 @@ beautiful.useless_gap = 5
 beautiful.border_width = 5
 --beautiful.border_normal ="#a8a8a8"
 beautiful.border_normal ="#DBD8C4"
--- beautiful.border_focus  ="#ff58ee"
-beautiful.border_focus  ="#FF0800"
+--beautiful.border_focus  ="#ff58ee"
+--beautiful.border_focus  ="#FF0800"
+beautiful.border_focus  ="#5eedfb"
 beautiful.border_marked ="#cecece"
 beautiful.maximized_hide_border = false
 beautiful.fullscreen_hide_border = false

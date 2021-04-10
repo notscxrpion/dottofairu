@@ -291,7 +291,8 @@ c.colors.tabs.pinned.selected.even.bg = '#282c34'
 # font setting, it's replaced with the fonts listed here. If set to an
 # empty value, a system-specific monospace default is used.
 # Type: List of Font, or Font
-c.fonts.default_family = '"DejaVuMono"'
+c.fonts.default_family = '"Source Code Pro"'
+
 
 # Default font size to use. Whenever "default_size" is used in a font
 # setting, it's replaced with the size listed here. Valid values are
@@ -302,11 +303,11 @@ c.fonts.default_size = '12pt'
 
 # Font used in the completion widget.
 # Type: Font
-c.fonts.completion.entry = '12pt "DejaVuMono"'
+c.fonts.completion.entry = '12pt "Source Code Pro"'
 
 # Font used for the debugging console.
 # Type: Font
-c.fonts.debug_console = '12pt "DejaVuMono"'
+c.fonts.debug_console = '12pt "Source Code Pro"'
 
 # Font used for prompts.
 # Type: Font
@@ -314,8 +315,7 @@ c.fonts.prompts = 'default_size sans-serif'
 
 # Font used in the statusbar.
 # Type: Font
-c.fonts.statusbar = '12pt "DejaVuMono"'
-
+c.fonts.statusbar = '12pt "Source Code Pro"'
 # Bindings to use dmenu rather than qutebrowser's builtin search.
 #config.bind('o', 'spawn --userscript dmenu-open')
 #config.bind('O', 'spawn --userscript dmenu-open --tab')
