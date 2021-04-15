@@ -375,6 +375,20 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
               {description = "select previous", group = "layout"}),
 
+awful.key({ modkey, "Shift"    }, "Right",     function () awful.tag.incmwfact(0.05)	      end,
+              {description = "increase window width factor", group = "layout"}),
+
+awful.key({ modkey, "Shift"    }, "Left",     function () awful.tag.incmwfact(-0.05)	      end,
+              {description = "decrease window width factor", group = "layout"}),
+
+awful.key({ modkey, "Shift"    }, "Down",     function () awful.client.incwfact(0.05)	      end,
+              {description = "increase window height factor", group = "layout"}),
+
+awful.key({ modkey, "Shift"    }, "Up",     function () awful.client.incwfact(-0.05)          end,
+              {description = "decrease window height factor", group = "layout"}),
+
+
+
     awful.key({ modkey, "Control" }, "n",
               function ()
                   local c = awful.client.restore()
