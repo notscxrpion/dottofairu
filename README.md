@@ -19,15 +19,14 @@ those are my dottofairu.
 - qutebrowser
 - flameshot
 - Chicago95
-- LightDM
 - Doom Emacs & neovim
 - Grub Customizer
 - PCManFM
 - lxapparance
 - nitrogen
-- Discord canary
+- Discord canary + ripcord
 - JP font + DejaVu font + fonts in general + emoji
-- fish
+- zsh
 - alacritty
 - sxiv
 - fctix5 + mozc

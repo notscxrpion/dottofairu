@@ -26,6 +26,7 @@ alias lt='exa -aT --color=always --group-directories-first' # tree listing
 alias l.='exa -a | egrep "^\."'
 alias temp='watch -n 2 sensors'
 alias nwspeed='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
+alias wallet="./home/scxrpion/Downloads/Exodus-linux-x64/Exodus"
 
 ### Input Keys ###
 
