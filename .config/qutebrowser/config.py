@@ -26,6 +26,7 @@ config.set("colors.webpage.darkmode.enabled", True)
 #c.content.fullscreen.window = True
 #config.set("colors.webpage.darkmode.enabled", True)
 
+config.set('content.prefers_reduced_motion', True)
 
 # Which cookies to accept. With QtWebEngine, this setting also controls
 # other features with tracking capabilities similar to those of cookies;

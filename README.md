@@ -16,15 +16,14 @@ those are my dottofairu.
 - rofi
 - PulseAudio & pavucontrol
 - redshift
-- qutebrowser
+- Brave
 - flameshot
-- Chicago95
+- Arc
 - Doom Emacs & neovim
 - Grub Customizer
 - PCManFM
 - lxapparance
-- nitrogen
-- Discord canary + ripcord
+- Discord canary + BetterDiscord + ripcord
 - JP font + DejaVu font + fonts in general + emoji
 - zsh
 - alacritty
@@ -33,6 +32,7 @@ those are my dottofairu.
 - mpv
 - youtube-dl
 - doas
+- xorg
 
 <br>
 
