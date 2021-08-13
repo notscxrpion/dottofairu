@@ -34,8 +34,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 6
-    y: 6
+    x: 3
+    y: 3 
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
@@ -96,7 +96,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Source Code Pro
+    family: DejaVu Sans Mono
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -135,7 +135,7 @@ font:
     #style: Semibold Italic
 
   # Point size
-  size: 11.0
+  size: 12.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -220,6 +220,39 @@ colors:
   #  bar:
   #    background: CellForeground
   #    foreground: CellBackground
+
+  colors:
+  # Default colors
+  primary:
+    background: '#000000'
+    foreground: '#EBEBEB'
+
+  # Cursor colors
+  cursor:
+   text: '#000000'
+   cursor: '#FFFFFF'
+
+  # Normal colors
+  normal:
+    black:   '#0d0d0d'
+    red:     '#FF301B'
+    green:   '#A0E521'
+    yellow:  '#FFC620'
+    blue:    '#1BA6FA'
+    magenta: '#8763B8'
+    cyan:    '#21DEEF'
+    white:   '#EBEBEB'
+
+  # Bright colors
+  bright:
+    black:   '#6D7070'
+    red:     '#FF4352'
+    green:   '#B8E466'
+    yellow:  '#FFD750'
+    blue:    '#1BA6FA'
+    magenta: '#A578EA'
+    cyan:    '#73FBF1'
+    white:   '#FEFEF8'
 
   # Normal colors
   #normal:
