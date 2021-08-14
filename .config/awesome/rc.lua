@@ -455,6 +455,11 @@ end,
              awful.util.spawn("flameshot screen -n 1 -c") end,
          {description = "flameshot 2nd monitor", group = "launcher"}),
 
+   -- flameshot monitor3
+        awful.key( {"Mod1"}, "Print",
+        function ()
+             awful.util.spawn("flameshot screen -n 2 -c") end,
+        {description = "flameshot 3rd monitor", group = "launcher"}),
 
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
@@ -699,7 +704,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 awful.spawn.with_shell("redshift -P -O 2500")
 awful.spawn.with_shell("xinput --set-prop 8 'libinput Accel Profile Enabled' 0, 0")
 awful.spawn.with_shell("xinput --set-prop 8 'libinput Accel Speed' 0")
-awful.spawn.with_shell("xrandr --output DisplayPort-0 --mode 1920x1080 --rate 239.76 --primary --output DisplayPort-1 --mode 1920x1080 --rate 60.00 --right-of DisplayPort-0")
+awful.spawn.with_shell("xrandr --output DisplayPort-0 --mode 1920x1080 --rate 239.76 --primary --output DisplayPort-1 --mode 1920x1080 --rate 60.00 --right-of DisplayPort-0 --output DispalyPort-2 --mode 1680x1050 --rate 59.94 --left-of DisplayPart-0")
 awful.spawn.with_shell("fcitx5 -dr")
 --awful.spawn.with_shell("openrgb -d 0 -m Direct -c ff8d00 -d 1 -m Direct -c ff8d00 -d 2 -m Direct -c ff0000")
 --awful.spawn.with_shell("openrgb -d 0 -m Direct -c ffffff -d 1 -m Direct -c ffffff -d 2 -m Direct -c ffffff")
