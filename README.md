@@ -13,28 +13,30 @@ those are my dottofairu.
 
 ## Essensharu ##
 
-- rofi
-- PulseAudio & pavucontrol
-- redshift
-- Brave
-- flameshot
-- Arc
-- Doom Emacs & neovim
-- Grub Customizer
-- PCManFM
-- lxapparance
-- Discord canary + BetterDiscord + ripcord
-- JP font + DejaVu font + fonts in general + emoji
-- zsh
+- Arc theme
 - alacritty
-- sxiv
-- fctix5 + mozc
-- mpv
-- youtube-dl
+- awesome
+- Brave
+- Discord Canary + BetterDiscord
 - doas
+- Doom Emacs & neovim
+- fcitx5 + mozc
+- flameshot
+- grub-customizer
+- kicad & kicad-nightly & kicad-library
+- lxapperance
+- mpv
+- PCManFM
+- PulseAudio & PulseMixer
+- RedShift
+- rofi
+- sx
+- ttf-mplus + DejaVu font + + emoji
 - xorg
+- youtube-dl
+- zsh
 
 <br>
 
 ## Raisensu ##
-This project is under the GNU General Public License v3.0. Check [LICENSE](https://github.com/Scxrpion69/dotfiles/blob/master/LICENSE/ "LICENSE").
+This project is under the GNU General Public License v3.0. Check [LICENSE](https://github.com/notscxrpion/dotfiles/blob/master/LICENSE/ "LICENSE").
