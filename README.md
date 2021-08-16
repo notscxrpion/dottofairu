@@ -1,6 +1,6 @@
 <br>
 <p align="center">
-  <img src="https://search.brave.com/search?q=ayame+trash+gang&source=desktop" alt="Nakiri Ayame DAISUKI!" width="430" height="588">
+  <img src="https://tbib.org//images/8564/d4ee6dacd02f084b3eb19abb7d5ecf224a9e3a80.jpg" alt="Nakiri Ayame DAISUKI!" width="430" height="588">
   </p>
   <br>
   
