@@ -1,8 +1,3 @@
-<br>
-<p align="center">
-  <img src="https://i.pximg.net/img-master/img/2021/08/10/20/00/00/91874193_p0_master1200.jpg" alt="Nakiri Ayame DAISUKI!">
-  </p>
-  <br>
   
 
 # dottofairu #
