@@ -1,6 +1,6 @@
 <br>
 <p align="center">
-  <img src="https://tbib.org//images/8564/d4ee6dacd02f084b3eb19abb7d5ecf224a9e3a80.jpg" alt="Nakiri Ayame DAISUKI!">
+  <img src="https://i.pximg.net/img-master/img/2021/08/10/20/00/00/91874193_p0_master1200.jpg" alt="Nakiri Ayame DAISUKI!">
   </p>
   <br>
   
