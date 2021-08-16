@@ -1,6 +1,6 @@
 <br>
 <p align="center">
-  <img src="https://i.imgur.com/PPTH3lA.png" alt="Zero Two TrashGang DAISUKI!" width="430" height="588">
+  <img src="https://search.brave.com/search?q=ayame+trash+gang&source=desktop" alt="Nakiri Ayame DAISUKI!" width="430" height="588">
   </p>
   <br>
   
