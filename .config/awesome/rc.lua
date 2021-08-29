@@ -286,8 +286,10 @@ awful.screen.connect_for_each_screen(function(s)
         buttons = tasklist_buttons
     }
     -- Create the wibox
-     s.mywibox = awful.wibar({ position = "top", height =20, screen = s, fg = "#ffffff", border_width=1, border_color="#5eedfb" })
-     s.mywibox2 = awful.wibar({ position = "bottom", height =20, screen = s, fg = "#ffffff", border_width=1, border_color="#5eedfb" })
+    --s.mywibox = awful.wibar({ position = "top", height =20, screen = s, fg = "#ffffff", border_width=1, border_color="#5eedfb" })
+     s.mywibox = awful.wibar({ position = "top", height =20, screen = s, fg = "#ffffff", border_width=1, border_color="#D9D9D9" })
+     s.mywibox2 = awful.wibar({ position = "bottom", height =20, screen = s, fg = "#ffffff", border_width=1, border_color="#D9D9D9" })
+    --s.mywibox2 = awful.wibar({ position = "bottom", height =20, screen = s, fg = "#ffffff", border_width=1, border_color="#5eedfb" })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -721,8 +723,10 @@ beautiful.useless_gap = 6
 -- Window Border
 beautiful.border_width = 5
 --beautiful.border_normal ="#a8a8a8"
-beautiful.border_normal ="#DBD8C4"
-beautiful.border_focus  ="#ff58ee"
+beautiful.border_normal ="#9d9d9d"
+--beautiful.border_normal ="#DBD8C4"
+beautiful.border_focus  ="#ffffff"
+--beautiful.border_focus  ="#ff58ee"
 --beautiful.border_focus  ="#FF0800"
 --beautiful.border_focus  ="#5eedfb"
 beautiful.border_marked ="#cecece"

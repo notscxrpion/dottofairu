@@ -224,8 +224,8 @@ colors:
   colors:
   # Default colors
   primary:
-    background: '#000000'
-    foreground: '#EBEBEB'
+    background: '#191c25'
+    foreground: '#b5b4c9'
 
   # Cursor colors
   cursor:
@@ -234,25 +234,25 @@ colors:
 
   # Normal colors
   normal:
-    black:   '#0d0d0d'
-    red:     '#FF301B'
-    green:   '#A0E521'
-    yellow:  '#FFC620'
-    blue:    '#1BA6FA'
-    magenta: '#8763B8'
-    cyan:    '#21DEEF'
-    white:   '#EBEBEB'
+    black:   '#2e313d'
+    red:     '#cf8164'
+    green:   '#76a065'
+    yellow:  '#ab942c'
+    blue:    '#8296b0'
+    magenta: '#a18daf'
+    cyan:    '#659ea2'
+    white:   '#b5b4c9'
 
   # Bright colors
   bright:
-    black:   '#6D7070'
-    red:     '#FF4352'
-    green:   '#B8E466'
-    yellow:  '#FFD750'
-    blue:    '#1BA6FA'
-    magenta: '#A578EA'
-    cyan:    '#73FBF1'
-    white:   '#FEFEF8'
+    black:   '#5b5f71'
+    red:     '#fe9f7c'
+    green:   '#92c47e'
+    yellow:  '#d2b45f'
+    blue:    '#a0b9d8'
+    magenta: '#c6aed7'
+    cyan:    '#7dc2c7'
+    white:   '#f0ecfe'
 
   # Normal colors
   #normal:
