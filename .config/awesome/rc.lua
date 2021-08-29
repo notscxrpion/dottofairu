@@ -45,6 +45,9 @@ do
 end
 -- }}}
 
+home = os.getenv("HOME")
+os.setlocale(os.getenv("LC_TIME"))
+
 -- personal variable
 local browser           = "brave"
 local editor            = os.getenv("EDITOR") or "nvim"
@@ -92,7 +95,7 @@ awful.layout.layouts = {
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock("  %m/%d |  %I:%M%P | ", 60)
+mytextclock = wibox.widget.textclock("  (%a) %F |  %H:%M | ", 60)
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
 awful.button({ }, 1, function(t) t:view_only() end),
