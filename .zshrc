@@ -25,6 +25,7 @@ alias temp='watch -n 2 sensors'
 alias nwspeed='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
 alias forecast='curl wttr.in'
 alias startx='startx >>/dev/null 2 >>&1'
+alias nigos='sudo ./var/lib/libvirt/images/basic.sh'
 
 # Changing "ls" to "exa"
 alias ls='exa -al --color=always --group-directories-first' # my preferred listing
