@@ -715,7 +715,7 @@ awful.spawn.with_shell("xrandr --output DisplayPort-0 --mode 1920x1080 --rate 23
 awful.spawn.with_shell("fcitx5 -dr")
 --awful.spawn.with_shell("openrgb -d 0 -m Direct -c ff8d00 -d 1 -m Direct -c ff8d00 -d 2 -m Direct -c ff0000")
 --awful.spawn.with_shell("openrgb -d 0 -m Direct -c ffffff -d 1 -m Direct -c ffffff -d 2 -m Direct -c ffffff")
-awful.spawn.with_shell("openrgb -d 0 -m Direct -c 000000 -d 1 -m Direct -c 0000000 -d 2 -m Direct -c 000000")
+awful.spawn.with_shell("openrgb -d 0 -m Direct -c 000000 -d 1 -m Direct -c 0000000 -d 2 -m Direct -c 000000 -d 3 -m Direct -c 000000 -d 4 -m Direct -c 000000")
 --awful.spawn.with_shell("liquidctl set led color fixed c900ff")
 awful.spawn.with_shell("nm-applet")
 awful.spawn.with_shell("flameshot")

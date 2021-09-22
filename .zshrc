@@ -1,4 +1,4 @@
-# Created by newuser for 5.8
+ # Created by newuser for 5.8
 
 # Enable colors and change prompt:
 autoload -U colors && colors
@@ -46,3 +46,4 @@ export QT_QPA_PLATFORMTHEME='qt5ct'
 # Load ; should be last.
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+
