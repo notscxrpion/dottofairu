@@ -23,6 +23,8 @@ set shiftwidth=4            " width for autoindents
 set autoindent              " indent a new line the same amount as the line just typed
 set number                  " add line numbers
 
+" Enable autocompletion:
+set wildmode=longest,list,full
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Theming
@@ -74,4 +76,4 @@ highlight Visual           guifg=#dfdfdf ctermfg=1    guibg=#1c1f24 ctermbg=none
 " highlight htmlEndTag       ctermfg=114     ctermbg=none    cterm=none
 " highlight xmlEndTag        ctermfg=114     ctermbg=none    cterm=none
 
-
+autocmd BufWritePost *note-*.md silent !buildNote %:p

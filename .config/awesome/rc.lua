@@ -81,21 +81,21 @@ awful.layout.layouts = {
     awful.layout.suit.tile.top,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
+    --awful.layout.suit.spiral,
+    --awful.layout.suit.spiral.dwindle,
     awful.layout.suit.max,
     awful.layout.suit.max.fullscreen,
     awful.layout.suit.magnifier,
-    awful.layout.suit.corner.nw,
-    awful.layout.suit.corner.ne,
-    awful.layout.suit.corner.sw,
+    --awful.layout.suit.corner.nw,
+   --awful.layout.suit.corner.ne,
+    --awful.layout.suit.corner.sw,
     --awful.layout.suit.se.corner,
 }
 -- }}}
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock("  (%a) %F |  %H:%M | ", 60)
+mytextclock = wibox.widget.textclock("  (%a) %F |  %H:%M ", 60)
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
 awful.button({ }, 1, function(t) t:view_only() end),
@@ -144,7 +144,7 @@ local function set_wallpaper(s)
         if type(wallpaper) == "function" then
             wallpaper = wallpaper(s)
         end
-        gears.wallpaper.maximized(wallpaper, 0, true)
+        gears.wallpaper.maximized(wallpaper, s, true)
     end
 end
 
@@ -354,13 +354,13 @@ end,
 --              {description = "show main menu", group = "awesome"}),
 
 -- Layout manipulation
-awful.key({ modkey, "Shift"   }, "t", function () awful.client.swap.byidx(  1)    end,
+awful.key({ modkey, "Shift"   }, "h", function () awful.client.swap.byidx(  1)    end,
 {description = "swap with next client by index", group = "client"}),
-awful.key({ modkey, "Shift"   }, "h", function () awful.client.swap.byidx( -1)    end,
+awful.key({ modkey, "Shift"   }, "t", function () awful.client.swap.byidx( -1)    end,
 {description = "swap with previous client by index", group = "client"}),
-awful.key({ modkey, "Control" }, "t", function () awful.screen.focus_relative( 1) end,
+awful.key({ modkey, "Control" }, "h", function () awful.screen.focus_relative( 1) end,
 {description = "focus the next screen", group = "screen"}),
-awful.key({ modkey, "Control" }, "h", function () awful.screen.focus_relative(-1) end,
+awful.key({ modkey, "Control" }, "t", function () awful.screen.focus_relative(-1) end,
 {description = "focus the previous screen", group = "screen"}),
 awful.key({ modkey,           }, "g", awful.client.urgent.jumpto,
 {description = "jump to urgent client", group = "client"}),
@@ -424,14 +424,8 @@ function ()
 end,
 {description = "restore minimized", group = "client"}),
 
--- rofi topbar
-    awful.key({ modkey }, "r",
-        function ()
-                  awful.util.spawn("rofi -show drun -config ~/.config/rofi/themes/topbarB.rasi") end,
-              {description = "rofi topbar edition", group = "launcher"}),
-
-    -- rofi
-    awful.key({ modkey, "Shift" }, "r",
+--     -- rofi
+    awful.key({ modkey}, "r",
         function ()
             awful.util.spawn("rofi -show drun") end,
             {description = "rofi -show drun", group = "launcher"}),
@@ -468,7 +462,12 @@ end,
 
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+              {description = "show the menubar", group = "launcher"}),
+    --note
+    awful.key({ modkey, "Shift" }, "n",
+    function ()
+        awful.util.spawn("alacritty -t notetaker_window -e /home/scxrpion/bin/notetaker") end,
+        {description = "take note", group = "launcher"})
 )
 
 clientkeys = gears.table.join(
@@ -484,9 +483,9 @@ clientkeys = gears.table.join(
               {description = "toggle floating", group = "client"}),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
               {description = "move to master", group = "client"}),
-    awful.key({ modkey,           }, "e",      function (c) c:move_to_screen (c.screen.index-1)               end,
+    awful.key({ modkey,           }, "u",      function (c) c:move_to_screen (c.screen.index-1)               end,
               {description = "move to previous screen", group = "client"}),
-    awful.key({ modkey,           }, "u",      function (c) c:move_to_screen (c.screen.index+1)               end,
+    awful.key({ modkey,           }, "e",      function (c) c:move_to_screen (c.screen.index+1)               end,
               {description = "move to next screen", group = "client"}),
     awful.key({ modkey,           }, "y",      function (c) c.ontop = not c.ontop            end,
               {description = "toggle keep on top", group = "client"}),
@@ -614,6 +613,7 @@ awful.rules.rules = {
           "Gpick",
           "Kruler",
           "MessageWin",  -- kalarm.
+          "notetaker_window",
           "Sxiv",
           "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
           "Wpa_gui",
@@ -624,13 +624,17 @@ awful.rules.rules = {
         -- and the name shown there might not match defined rules here.
         name = {
           "Event Tester",  -- xev.
+          "notetaker_window",
         },
         role = {
           "AlarmWindow",  -- Thunderbird's calendar.
           "ConfigManager",  -- Thunderbird's about:config.
+          "notetaker_window",
           "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
         }
-      }, properties = { floating = true }},
+      }, properties = { floating = true},
+         properties = { placement = awful.placement.centered},
+    },
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
@@ -649,7 +653,6 @@ client.connect_signal("manage", function (c)
     -- Set the windows at the slave,
     -- i.e. put it at the end of others instead of setting it master.
     -- if not awesome.startup then awful.client.setslave(c) end
-
     if awesome.startup
       and not c.size_hints.user_position
       and not c.size_hints.program_position then
@@ -711,13 +714,12 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 awful.spawn.with_shell("redshift -P -O 2500")
 awful.spawn.with_shell("xinput --set-prop 8 'libinput Accel Profile Enabled' 0, 0")
 awful.spawn.with_shell("xinput --set-prop 8 'libinput Accel Speed' 0")
-awful.spawn.with_shell("xrandr --output DisplayPort-0 --mode 1920x1080 --rate 239.76 --primary --output DisplayPort-1 --mode 1920x1080 --rate 60.00 --right-of DisplayPort-0 --output DisplayPort-2 --mode 1680x1050 --rate 59.94 --left-of DisplayPort-0")
+awful.spawn.with_shell("xrandr --output DisplayPort-0 --mode 1920x1080 --rate 239.76 --primary --output DisplayPort-1 --mode 1920x1080 --rate 60.00 --above DisplayPort-0 --output DisplayPort-2 --mode 1680x1050 --rate 59.94 --below DisplayPort-0")
 awful.spawn.with_shell("fcitx5 -dr")
 --awful.spawn.with_shell("openrgb -d 0 -m Direct -c ff8d00 -d 1 -m Direct -c ff8d00 -d 2 -m Direct -c ff0000")
 --awful.spawn.with_shell("openrgb -d 0 -m Direct -c ffffff -d 1 -m Direct -c ffffff -d 2 -m Direct -c ffffff")
 awful.spawn.with_shell("openrgb -d 0 -m Direct -c 000000 -d 1 -m Direct -c 0000000 -d 2 -m Direct -c 000000 -d 3 -m Direct -c 000000 -d 4 -m Direct -c 000000")
 --awful.spawn.with_shell("liquidctl set led color fixed c900ff")
-awful.spawn.with_shell("nm-applet")
 awful.spawn.with_shell("flameshot")
 
 -- Gaps
