@@ -65,7 +65,7 @@ note() {
 
 mknote() {
     if [[ -z "$1" ]]; then
-        pandoc $((find $base/ -type f)| head -n 1) -o $(find $base/ -type f).pdf
+        pdflatex $((find $base/ -type f)| head -n 1) -o $(find $base/ -type f).pdf
     else
         bat $1.md
     fi
