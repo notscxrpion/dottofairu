@@ -8,25 +8,31 @@ those are my dottofairu.
 
 ## Essensharu ##
 
-- Arc theme
+- Adwaita-qt
 - alacritty
+- Arc theme
 - awesome
 - Brave
 - Discord Canary + BetterDiscord
-- doas
 - Doom Emacs & neovim
 - fcitx5 + mozc
+- ffmpeg
 - flameshot
+- freezer
+- git
 - grub-customizer
 - kicad & kicad-nightly & kicad-library
-- lxapperance
+- LaTex
+- lxapperance qt5c
 - mpv
+- opendoas
 - PCManFM
 - PulseAudio & PulseMixer
+- ranger
 - RedShift
 - rofi
 - sx
-- ttf-mplus + DejaVu font + + emoji
+- ttf-mplus + DejaVu font + emoji
 - xorg
 - youtube-dl
 - zsh
