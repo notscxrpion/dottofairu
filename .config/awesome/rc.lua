@@ -49,7 +49,7 @@ home = os.getenv("HOME")
 os.setlocale(os.getenv("LC_TIME"))
 
 -- personal variable
-local browser           = "brave"
+local browser           = "firefox"
 local editor            = os.getenv("EDITOR") or "nvim"
 local filemanager       = "pcmanfm"
 local mediaplayer       = "mpv"
@@ -156,7 +156,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "", "", "", "", "", "", "", "", "" }, s, awful.layout.layouts[1])
+    awful.tag({ "一", "二", "三", "四", "五", "六", "七", "八", "九" }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -430,11 +430,11 @@ end,
             awful.util.spawn("rofi -show drun") end,
             {description = "rofi -show drun", group = "launcher"}),
 
-    -- brave
+    -- firefox
     awful.key({ modkey }, "b",
         function()
-            awful.util.spawn("brave") end,
-        {description = "brave", group= "application"}),
+            awful.util.spawn("firefox") end,
+        {description = "firefox", group= "application"}),
 
     -- flameshot
         awful.key({}, "Print",
@@ -721,9 +721,10 @@ awful.spawn.with_shell("fcitx5 -dr")
 awful.spawn.with_shell("openrgb -d 0 -m Direct -c 000000 -d 1 -m Direct -c 0000000 -d 2 -m Direct -c 000000 -d 3 -m Direct -c 000000 -d 4 -m Direct -c 000000")
 --awful.spawn.with_shell("liquidctl set led color fixed c900ff")
 awful.spawn.with_shell("flameshot")
+awful.spawn.with_shell("pulseeffects")
 
 -- Gaps
-beautiful.useless_gap = 6
+beautiful.useless_gap = 4
 
 -- Window Border
 beautiful.border_width = 5
