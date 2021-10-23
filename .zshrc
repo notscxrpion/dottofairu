@@ -1,6 +1,7 @@
  # Created by newuser for 5.8
 
 # Enable colors and change prompt:
+export TERM="xterm-256color"
 autoload -U colors && colors
 #PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 

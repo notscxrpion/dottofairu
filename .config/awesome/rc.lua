@@ -16,6 +16,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
+local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -51,9 +52,9 @@ os.setlocale(os.getenv("LC_TIME"))
 -- personal variable
 local browser           = "firefox"
 local editor            = os.getenv("EDITOR") or "nvim"
-local filemanager       = "pcmanfm"
+local filemanager       = "ranger"
 local mediaplayer       = "mpv"
-local terminal          = "alacritty"
+local terminal          = "urxvt"
 local virtualmachine    = "virtualbox"
 
 -- {{{ Variable definitions
@@ -61,7 +62,7 @@ local virtualmachine    = "virtualbox"
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "alacritty"
+terminal = "urxvt"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -95,7 +96,7 @@ awful.layout.layouts = {
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock("  (%a) %F |  %H:%M ", 60)
+mytextclock = wibox.widget.textclock(" |  (%a) %F |  %H:%M ", 60)
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
 awful.button({ }, 1, function(t) t:view_only() end),
@@ -319,6 +320,7 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist2, -- Middle widget
         { -- Right widgets
         layout = wibox.layout.fixed.horizontal,
+        battery_widget(),
         mytextclock,
     },
 }
@@ -374,7 +376,7 @@ end,
 {description = "go back", group = "client"}),
 
 -- Standard program
-awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
+awful.key({ modkey,           }, "Return", function () awful.spawn("urxvt -fg white -bg black +sb") end,
 {description = "open a terminal", group = "launcher"}),
 awful.key({ modkey, "Control" }, "r", awesome.restart,
 {description = "reload awesome", group = "awesome"}),
@@ -448,25 +450,13 @@ end,
              awful.util.spawn("flameshot screen -n 0 -c") end,
          {description = "flameshot 1st monitor", group = "launcher"}),
 
-    -- flameshot monitor2
-         awful.key( {"Control", "Shift"}, "Print",
-         function ()
-             awful.util.spawn("flameshot screen -n 1 -c") end,
-         {description = "flameshot 2nd monitor", group = "launcher"}),
-
-   -- flameshot monitor3
-        awful.key( {"Mod1"}, "Print",
-        function ()
-             awful.util.spawn("flameshot screen -n 2 -c") end,
-        {description = "flameshot 3rd monitor", group = "launcher"}),
-
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"}),
     --note
     awful.key({ modkey, "Shift" }, "n",
     function ()
-        awful.util.spawn("alacritty -t notetaker_window -e /home/scxrpion/bin/notetaker") end,
+        awful.util.spawn("urxvt -t notetaker_window -e /home/scxrpion/bin/notetaker") end,
         {description = "take note", group = "launcher"})
 )
 
@@ -715,13 +705,12 @@ awful.spawn.with_shell("redshift -P -O 2500")
 awful.spawn.with_shell("xinput --set-prop 8 'libinput Accel Profile Enabled' 0, 0")
 awful.spawn.with_shell("xinput --set-prop 8 'libinput Accel Speed' 0")
 awful.spawn.with_shell("xrandr --output DisplayPort-0 --mode 1920x1080 --rate 239.76 --primary --output DisplayPort-1 --mode 1920x1080 --rate 60.00 --above DisplayPort-0 --output DisplayPort-2 --mode 1680x1050 --rate 59.94 --below DisplayPort-0")
-awful.spawn.with_shell("fcitx5 -dr")
---awful.spawn.with_shell("openrgb -d 0 -m Direct -c ff8d00 -d 1 -m Direct -c ff8d00 -d 2 -m Direct -c ff0000")
---awful.spawn.with_shell("openrgb -d 0 -m Direct -c ffffff -d 1 -m Direct -c ffffff -d 2 -m Direct -c ffffff")
-awful.spawn.with_shell("openrgb -d 0 -m Direct -c 000000 -d 1 -m Direct -c 0000000 -d 2 -m Direct -c 000000 -d 3 -m Direct -c 000000 -d 4 -m Direct -c 000000")
---awful.spawn.with_shell("liquidctl set led color fixed c900ff")
+awful.spawn.with_shell("fcitx -dr")
 awful.spawn.with_shell("flameshot")
 awful.spawn.with_shell("pulseeffects")
+awful.spawn.with_shell("xrdb ~/.Xresources")
+awful.spawn.with_shell("nm-applet")
+awful.spawn.with_shell("tlp")
 
 -- Gaps
 beautiful.useless_gap = 4

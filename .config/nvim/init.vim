@@ -39,7 +39,7 @@ highlight StatusLine       guifg=#202328 ctermfg=7    guifg=#5b6268 ctermbg=8   
 highlight StatusLineNC     guifg=#202328 ctermfg=7    guifg=#5b6268 ctermbg=8     cterm=none
 highlight NERDTreeClosable guifg=#98be65 ctermfg=2
 highlight NERDTreeOpenable guifg=#5b6268 ctermfg=8
-highlight Comment          guifg=#51afef ctermfg=4    guibg=none    ctermbg=none  cterm=italic
+highlight Comment          guifg=#ffffff ctermfg=4    guibg=none    ctermbg=none  cterm=italic
 highlight Constant         guifg=#3071db ctermfg=12   guibg=none    ctermbg=none  cterm=none
 highlight Special          guifg=#51afef ctermfg=4    guibg=none    ctermbg=none  cterm=none
 highlight Identifier       guifg=#5699af ctermfg=6    guibg=none    ctermbg=none  cterm=none
