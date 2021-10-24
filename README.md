@@ -9,15 +9,12 @@ those are my dottofairu.
 ## Essensharu ##
 
 - Adwaita-qt
-- alacritty
 - Arc theme
 - awesome
-- Brave
-- Discord Canary + BetterDiscord
+- Firefox
 - Doom Emacs & neovim
-- fcitx5 + mozc
+- fcitx + mozc
 - ffmpeg
-- flameshot
 - freezer
 - git
 - grub-customizer
@@ -26,13 +23,14 @@ those are my dottofairu.
 - lxapperance qt5c
 - mpv
 - opendoas
-- PCManFM
 - PulseAudio & PulseMixer
 - ranger
 - RedShift
 - rofi
+- scrot + xclip
 - sx
 - ttf-mplus + DejaVu font + emoji
+- urxvt
 - xorg
 - youtube-dl
 - zsh
