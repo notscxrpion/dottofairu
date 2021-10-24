@@ -16,7 +16,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
-local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
+--local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -55,7 +55,7 @@ local editor            = os.getenv("EDITOR") or "nvim"
 local filemanager       = "ranger"
 local mediaplayer       = "mpv"
 local terminal          = "urxvt"
-local virtualmachine    = "virtualbox"
+local virtualmachine    = "virt-manager"
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
@@ -320,7 +320,7 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist2, -- Middle widget
         { -- Right widgets
         layout = wibox.layout.fixed.horizontal,
-        battery_widget(),
+       -- battery_widget(),
         mytextclock,
     },
 }
@@ -438,19 +438,19 @@ end,
             awful.util.spawn("firefox") end,
         {description = "firefox", group= "application"}),
 
-    -- flameshot
+    -- scrot
         awful.key({}, "Print",
         function ()
-            awful.util.spawn("flameshot gui") end,
-        {description = "flameshot", group = "launcher"}),
+            awful.util.spawn("scrot '/home/scxrpion/screenshot/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'") end,
+        {description = "scrot + xclip", group = "launcher"}),
+    -- scrot
+        awful.key({"Shift"}, "Print",
+        function ()
+            awful.util.spawn("scrot '/home/scxrpion/screenshot/%F_%T_$wx$h.png' -s -e 'xclip -selection clipboard -target image/png -i $f'") end,
+        {description = "scrot + xclip selection", group = "launcher"}),
 
-    -- flameshot monitor1
-         awful.key( {"Control"}, "Print",
-         function ()
-             awful.util.spawn("flameshot screen -n 0 -c") end,
-         {description = "flameshot 1st monitor", group = "launcher"}),
 
-    -- Menubar
+    --v    -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"}),
     --note
@@ -709,8 +709,8 @@ awful.spawn.with_shell("fcitx -dr")
 awful.spawn.with_shell("flameshot")
 awful.spawn.with_shell("pulseeffects")
 awful.spawn.with_shell("xrdb ~/.Xresources")
-awful.spawn.with_shell("nm-applet")
-awful.spawn.with_shell("tlp")
+--awful.spawn.with_shell("nm-applet")
+--awful.spawn.with_shell("tlp")
 
 -- Gaps
 beautiful.useless_gap = 4

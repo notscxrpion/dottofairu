@@ -49,3 +49,5 @@ URxvt.color7:#c0b18b
 URxvt.color15:#c0b18b
 
 Urxvt*scrolBar: False
+
+URxvt.letterSpace: 1
