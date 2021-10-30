@@ -376,7 +376,7 @@ end,
 {description = "go back", group = "client"}),
 
 -- Standard program
-awful.key({ modkey,           }, "Return", function () awful.spawn("urxvt -fg white -bg black +sb") end,
+awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
 {description = "open a terminal", group = "launcher"}),
 awful.key({ modkey, "Control" }, "r", awesome.restart,
 {description = "reload awesome", group = "awesome"}),
@@ -702,13 +702,16 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- Autostart Application
 awful.spawn.with_shell("redshift -P -O 2500")
-awful.spawn.with_shell("xinput --set-prop 8 'libinput Accel Profile Enabled' 0, 0")
+awful.spawn.with_shell("xinput --set-prop 8 'libinput Accel Profile Enabled' 0, 1")
 awful.spawn.with_shell("xinput --set-prop 8 'libinput Accel Speed' 0")
-awful.spawn.with_shell("xrandr --output DisplayPort-0 --mode 1920x1080 --rate 239.76 --primary --output DisplayPort-1 --mode 1920x1080 --rate 60.00 --above DisplayPort-0 --output DisplayPort-2 --mode 1680x1050 --rate 59.94 --below DisplayPort-0")
+awful.spawn.with_shell("xset m 0 0")
+awful.spawn.with_shell("xrandr --output DisplayPort-0 --mode 1920x1080 --rate 239.76 --primary --output DisplayPort-1 --mode 1920x1080 --rate 60.00 --above DisplayPort-0") --output DisplayPort-2 --mode 1680x1050 --rate 59.94 --below DisplayPort-0")
+awful.spawn.with_shell("openrgb -d 0 -m Direct -c 000000 -d 1 -m Direct -c 000000 -d 2 -m Direct -c 000000 -d 3 -m Direct -c 000000 -d 4 -m Direct -c 000000")
 awful.spawn.with_shell("fcitx -dr")
 awful.spawn.with_shell("flameshot")
 awful.spawn.with_shell("pulseeffects")
 awful.spawn.with_shell("xrdb ~/.Xresources")
+awful.spawn.with_shell("modprobe i2c-dev")
 --awful.spawn.with_shell("nm-applet")
 --awful.spawn.with_shell("tlp")
 
