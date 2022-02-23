@@ -1,4 +1,4 @@
--- If LuaRocks is installed, make sure that packages installed through it are
+--If LuaRocks is installed, make sure that packages installed through it are
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
@@ -16,7 +16,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
-local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
+--local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
@@ -96,7 +96,7 @@ awful.layout.layouts = {
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock(" |  (%a) %F |  %H:%M ", 60)
+mytextclock = wibox.widget.textclock(" (%a) %F | %H:%M ", 60)
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
 awful.button({ }, 1, function(t) t:view_only() end),
@@ -141,7 +141,7 @@ local function set_wallpaper(s)
     -- Wallpaper
     if beautiful.wallpaper then
         local wallpaper = beautiful.wallpaper
-        -- If wallpaper is a function, call it with the screen
+          -- If wallpaper is a function, call it with the screen
         if type(wallpaper) == "function" then
             wallpaper = wallpaper(s)
         end
@@ -320,7 +320,7 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist2, -- Middle widget
         { -- Right widgets
         layout = wibox.layout.fixed.horizontal,
-        battery_widget(),
+        --battery_widget(),
         mytextclock,
     },
 }
@@ -352,6 +352,17 @@ function ()
 end,
 {description = "focus previous by index", group = "client"}
 ),
+
+-- Show/hide wibar
+
+awful.key({ modkey }, "o",
+function ()
+myscreen = awful.screen.focused()
+myscreen.mywibox.visible = not myscreen.mywibox.visible
+myscreen.mywibox2.visible = not myscreen.mywibox2.visible
+end,
+{description = "toggle statusbar", group = "awesome"}),
+
 --    awful.key({ modkey,           }, ",", function () mymainmenu:show() end,
 --              {description = "show main menu", group = "awesome"}),
 
@@ -437,6 +448,13 @@ end,
         function()
             awful.util.spawn("firefox") end,
         {description = "firefox", group= "application"}),
+
+    -- xlock
+    awful.key({ modkey }, "l",
+        function()
+            awful.util.spawn("xlock") end,
+        {description = "xlock", group= "application"}),
+
 
     -- scrot
         awful.key({}, "Print",
@@ -702,24 +720,29 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- Autostart Application
 awful.spawn.with_shell("redshift -P -O 2500")
-awful.spawn.with_shell("xinput --set-prop 9 'libinput Accel Profile Enabled' 0, 1")
-awful.spawn.with_shell("xinput --set-prop 17 'libinput Accel Profile Enabled' 0, 1")
-awful.spawn.with_shell("xinput --set-prop 9 'libinput Accel Speed' 0")
-awful.spawn.with_shell("xinput --set-prop 17 'libinput Accel Speed' 0")
+awful.spawn.with_shell("feh --bg-center Pictures/897478.jpg Pictures/marek-okon-L4h2cvheWuc-unsplash.jpg")
+awful.spawn.with_shell("xinput --set-prop 15 'libinput Accel Profile Enabled' 0, 1")
+awful.spawn.with_shell("xinput --set-prop 16 'libinput Accel Profile Enabled' 0, 1")
+awful.spawn.with_shell("xinput --set-prop 15 'libinput Accel Speed' 0")
+awful.spawn.with_shell("xinput --set-prop 16 'libinput Accel Speed' 0")
+awful.spawn.with_shell("xinput --set-prop 8 'libinput Accel Profile Enabled' 0, 1")
+awful.spawn.with_shell("xinput --set-prop 10 'libinput Accel Profile Enabled' 0, 1")
+awful.spawn.with_shell("xinput --set-prop 8 'libinput Accel Speed' 0")
+awful.spawn.with_shell("xinput --set-prop 10 'libinput Accel Speed' 0")
 awful.spawn.with_shell("xset m 0 0")
-awful.spawn.with_shell("xrandr --output LVDS1 --mode 1366x768 --rate 60.00 --primary --output DP2 --mode 1920x1080 --rate 119.98 --left-of LVDS1")
+awful.spawn.with_shell("xrandr --output DisplayPort-0 --mode 1920x1080 --rate 239.76 --primary --output DisplayPort-1 --mode 1920x1080 --rate 60.00 --above DisplayPort-0")
+awful.spawn.with_shell("openrgb -d 0 -m Direct -c 0000 -d 1 -m Direct -c 0000 -d 2 -m Direct -c 0000 -d 3 -m Direct -c 0000")
 awful.spawn.with_shell("fcitx -dr")
-awful.spawn.with_shell("flameshot")
-awful.spawn.with_shell("pulseeffects")
-awful.spawn.with_shell("xrdb ~/.Xresources")
-awful.spawn.with_shell("nm-applet")
-awful.spawn.with_shell("tlp")
+awful.spawn.with_shell("xrdb ~/.Xdefaults")
+awful.spawn.with_shell("modprobe i2c-dev")
+--awful.spawn.with_shell("nm-applet")
+--awful.spawn.with_shell("tlp")
 
 -- Gaps
-beautiful.useless_gap = 4
+--beautiful.useless_gap = 4
 
 -- Window Border
-beautiful.border_width = 5
+--beautiful.border_width = 5
 --beautiful.border_normal ="#a8a8a8"
 beautiful.border_normal ="#9d9d9d"
 --beautiful.border_normal ="#DBD8C4"

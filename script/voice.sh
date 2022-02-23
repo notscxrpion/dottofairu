@@ -1,1 +1,1 @@
-ffmpeg -f alsa -ac 1 -i default output.wav
+ffmpeg -f alsa -ac 2 -i default output.wav

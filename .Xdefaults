@@ -1,4 +1,5 @@
 URxvt.cursorColor: #c0b18b
+Xcursor.size: 16
 
 URxvt.background: #000000
 URxvt.foreground: #aaaaaa
