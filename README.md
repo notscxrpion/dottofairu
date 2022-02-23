@@ -23,7 +23,7 @@ those are my dottofairu.
 - lxapperance qt5c
 - mpv
 - opendoas
-- PulseAudio & PulseMixer
+- pipewire & PulseMixer
 - ranger
 - RedShift
 - rofi
@@ -32,7 +32,7 @@ those are my dottofairu.
 - ttf-mplus + DejaVu font + emoji
 - urxvt
 - xorg
-- youtube-dl
+- ytp-dl
 - zsh
 
 <br>
