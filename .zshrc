@@ -26,9 +26,11 @@ alias temp='watch -n 2 sensors'
 alias nwspeed='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
 alias forecast='curl wttr.in'
 alias nasty='smbclient //192.168.1.53/scxrpion -U scxrpion'
-alias prc='xfreerdp /u:"scxrpion" /v:192.168.10.111 /dynamic-resolution'
+alias prc='xfreerdp /u:"scxrpion" /v:10.0.0.83 /dynamic-resolution'
 alias nextcloud='sudo mount -t davfs https://scxrpion.duckdns.org:8283/remote.php/dav/files/ncadmin/ NextCloud/ -o noexec'
 alias xmr='sudo ./xmrig -o rx.unmineable.com:3333 -u HOT:0x6ADC5b2E7564AD65277A30fcb872882b67AB48e3.PRC -a rx/0'
+alias gpu='./lolMiner --algo ETCHASH --pool etchash.unmineable.com:3333 --user SUSHI:0x6ADC5b2E7564AD65277A30fcb872882b67AB48e3.PRC̈́'
+alias sushipu='./lolMiner --algo ETCHASH --pool etchash.unmineable.com:3333 --user SUSHI:0x6ADC5b2E7564AD65277A30fcb872882b67AB48e3.PRC̈́'
 
 # Changing "ls" to "exa"
 alias ls='exa -al --color=always --group-directories-first' # my preferred listing
