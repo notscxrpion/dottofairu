@@ -16,6 +16,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
+local lain = require ("lain")
 --local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
@@ -76,24 +77,26 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
     awful.layout.suit.tile,
-    awful.layout.suit.floating,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
+    lain.layout.termfair.center,
+    --awful.layout.suit.floating,
+    --awful.layout.suit.tile.left,
+    --awful.layout.suit.tile.bottom,
+    --awful.layout.suit.tile.top,
+    --awful.layout.suit.fair,
+    --awful.layout.suit.fair.horizontal,
     --awful.layout.suit.spiral,
     --awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier,
+    --awful.layout.suit.max,
+    --awful.layout.suit.max.fullscreen,
+    --awful.layout.suit.magnifier,
     --awful.layout.suit.corner.nw,
    --awful.layout.suit.corner.ne,
     --awful.layout.suit.corner.sw,
     --awful.layout.suit.se.corner,
 }
 -- }}}
-
+lain.layout.termfair.nmaster = 3
+lain.layout.termfair.ncol    = 1
 -- {{{ Wibar
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock(" (%a) %F | %H:%M ", 60)
@@ -729,12 +732,15 @@ awful.spawn.with_shell("xinput --set-prop 8 'libinput Accel Profile Enabled' 0, 
 awful.spawn.with_shell("xinput --set-prop 18 'libinput Accel Profile Enabled' 0, 1")
 awful.spawn.with_shell("xinput --set-prop 8 'libinput Accel Speed' 0")
 awful.spawn.with_shell("xinput --set-prop 18 'libinput Accel Speed' 0")
+awful.spawn.with_shell("xinput --set-prop 14 'libinput Accel Profile Enabled' 0, 1")
+awful.spawn.with_shell("xinput --set-prop 14 'libinput Accel Speed' 0")
 awful.spawn.with_shell("xset m 0 0")
 awful.spawn.with_shell("xrandr --output DisplayPort-0 --mode 1920x1080 --rate 239.76 --primary --output DisplayPort-1 --mode 1920x1080 --rate 60.00 --above DisplayPort-0")
 awful.spawn.with_shell("openrgb -d 0 -m Direct -c 0000 -d 1 -m Direct -c 0000 -d 2 -m Direct -c 0000 -d 3 -m Direct -c 0000")
 awful.spawn.with_shell("fcitx -dr")
 awful.spawn.with_shell("xrdb ~/.Xdefaults")
 awful.spawn.with_shell("modprobe i2c-dev")
+awful.spawn.with_shell("spotify-tray -m")
 --awful.spawn.with_shell("nm-applet")
 --awful.spawn.with_shell("tlp")
 
@@ -744,15 +750,17 @@ awful.spawn.with_shell("modprobe i2c-dev")
 -- Window Border
 --beautiful.border_width = 5
 --beautiful.border_normal ="#a8a8a8"
-beautiful.border_normal ="#9d9d9d"
+--beautiful.border_normal ="#9d9d9d"
 --beautiful.border_normal ="#DBD8C4"
-beautiful.border_focus  ="#ffffff"
+--beautiful.border_focus  ="#ffffff"
 --beautiful.border_focus  ="#ff58ee"
 --beautiful.border_focus  ="#FF0800"
 --beautiful.border_focus  ="#5eedfb"
-beautiful.border_marked ="#cecece"
-beautiful.maximized_hide_border = false
-beautiful.fullscreen_hide_border = false
+--beautiful.border_marked ="#cecece"
+beautiful.border_normal ="#000000"
+beautifulborder_focus  ="#000000"
+beautiful.maximized_hide_border = true
+beautiful.fullscreen_hide_border = true
 
 -- Widget placement
 beautiful.systray_icon_spacing = 3
