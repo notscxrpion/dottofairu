@@ -1,1 +1,0 @@
-ffmpeg -f alsa -ac 1 -i pulse -f alsa -ac 2 -i pulse -filter_complex amix=inputs=2 -f x11grab -r 60 -s 1920x1080 -i :1.0+0,1080 -acodec pcm_s16le -vcodec libx264 -preset ultrafast -threads 0 -y  /home/scxrpion/Videos/"$(date +"%Y_%m_%d_%I_%M_%p").mkv"
