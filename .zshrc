@@ -25,9 +25,6 @@ alias cc='curl rate.sx'
 alias temp='watch -n 2 sensors'
 alias nwspeed='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
 alias forecast='curl wttr.in'
-alias nasty='smbclient //192.168.1.53/scxrpion -U scxrpion'
-alias prc='xfreerdp /u:"scxrpion" /v:10.0.0.97 /dynamic-resolution'
-alias nextcloud='sudo mount -t davfs https://scxrpion.duckdns.org:8283/remote.php/dav/files/ncadmin/ NextCloud/ -o noexec'
 
 # Changing "ls" to "exa"
 alias ls='exa -al --color=always --group-directories-first' # my preferred listing

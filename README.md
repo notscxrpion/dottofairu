@@ -10,29 +10,26 @@ those are my dottofairu.
 
 - Adwaita-qt
 - Arc theme
-- awesome
 - Firefox
-- Doom Emacs & neovim
 - fcitx + mozc
 - ffmpeg
-- freezer
 - git
-- grub-customizer
-- kicad & kicad-nightly & kicad-library
+- kicad 
+- qucs-s
+- structorizer
+- superslicer, pronterface
+- freecad
+- openscad
 - LaTex
 - lxapperance qt5c
 - mpv
-- opendoas
 - pipewire & PulseMixer
 - ranger
-- RedShift
 - rofi
 - scrot + xclip
-- sx
-- ttf-mplus + DejaVu font + emoji
-- urxvt
+- ttf-mplus + DejaVu font + ttf-all-the-icons
 - xorg
-- ytp-dl
+- yt-dlp
 - zsh
 
 <br>
