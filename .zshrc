@@ -25,6 +25,7 @@ alias cc='curl rate.sx'
 alias temp='watch -n 2 sensors'
 alias nwspeed='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
 alias forecast='curl wttr.in'
+alias _='sudo '
 
 # Changing "ls" to "exa"
 alias ls='exa -al --color=always --group-directories-first' # my preferred listing

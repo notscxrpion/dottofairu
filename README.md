@@ -11,6 +11,7 @@ those are my dottofairu.
 - Adwaita-qt
 - Arc theme
 - Firefox
+- gnome-calendar
 - fcitx + mozc
 - ffmpeg
 - git
@@ -19,6 +20,7 @@ those are my dottofairu.
 - structorizer
 - superslicer, pronterface
 - freecad
+- sweethome3d
 - openscad
 - LaTex
 - lxapperance qt5c
@@ -26,7 +28,7 @@ those are my dottofairu.
 - pipewire & PulseMixer
 - ranger
 - rofi
-- scrot + xclip
+- flameshot
 - ttf-mplus + DejaVu font + ttf-all-the-icons
 - xorg
 - yt-dlp

@@ -53,8 +53,8 @@ new_window pixel 1
 # hide_edge_borders both
 
 # Set inner/outer gaps
-gaps inner 6
-gaps outer 3
+#gaps inner 6
+#gaps outer 3
 
 # show window title bars (not officially supported with i3gaps)
 #default_border normal
@@ -276,8 +276,9 @@ bindsym $mod+p exec /usr/local/bin/switch-audio-port
 ## App shortcuts
 bindsym $mod+w exec /usr/bin/firefox
 bindsym $mod+n exec /usr/bin/thunar
-bindsym Print exec scrot ~/screenshot/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
-bindsym --release Shift+Print exec scrot ~/screenshot/%Y-%m-%d-%T-screenshot.png -s -e 'xclip -selection clipboard -target image/png -i $f' && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
+bindsym --release Shift+Print exec flameshot gui
+bindsym Print exec flameshot full
+bindsym $mod2+Print exec flameshot full
 
 # Power Profiles menu switcher (rofi)
 bindsym $mod+Shift+p exec ~/.config/i3/scripts/power-profiles
@@ -306,7 +307,18 @@ set $ws10 "10"
 #workspace $ws2 output VGA-0
 #workspace $ws3 output HDMI-0
 #workspace $ws4 output HDMI-0
-#workspace $ws5 output HDMI-0
+#workspace $ws5 output HDMI-
+
+
+workspace $ws3 output DisplayPort-1
+workspace $ws4 output DisplayPort-1
+workspace $ws5 output DisplayPort-1
+
+
+workspace $ws1 output DisplayPort-0
+workspace $ws2 output DisplayPort-0
+workspace $ws6 output DisplayPort-0
+workspace $ws7 output DisplayPort-1
 
 # bind program to workspace and focus to them on startup:
 assign [class="Xfce4-terminal"] $ws1
@@ -316,7 +328,11 @@ assign [class="Spotify"] $ws4
 assign [class="discord"] $ws5
 assign [class="Cura"] $ws6
 assign [class="SuperSlicer"] $ws6
+assign [class="FreeCAD"] $ws6
+assign [class="KiCad"] $ws6
 assign [class="Exodus"] $ws7
+assign [class="Mailspring"] $ws7
+assign [class="gnome-calendar"] $ws7
 
 # automatic set focus new window if it opens on another workspace than the current:
 for_window [class=Xfce4-terminal] focus
@@ -328,6 +344,10 @@ for_window [class=discord] focus
 for_window [class=Cura] focus
 for_window [class=SuperSlicer] focus
 for_window [class=Exodus] focus
+for_window [class=FreeCAD] focus
+for_window [class=KiCad] focus
+for_window [class=Mailspring] focus
+for_window [class=gnome-calendar] focus
 
 ##############
 # compositor #
@@ -368,8 +388,7 @@ exec_always --no-startup-id modprobe i2c-piix4
 exec --no-startup-id openrgb -d 0 -m Direct -c 0000 -d 1 -m Direct -c 0000 -d 2 -m Direct -c 0000 -d 3 -m Direct -c 0000
 
 #monitor shit
-exec_always --no-startup-id xrandr --output DisplayPort-0 --mode 1280x1024_85.00 --primary --output DisplayPort-1 --mode 1920x1080 --rate 239.76 --rotate left --right-of DisplayPort-0 --output DisplayPort-2 --mode 1920x1080 --rate 60.00 --rotate left --left-of DisplayPort-0
-
+exec_always --no-startup-idxrandr --output DisplayPort-0 --primary --mode 1920x1080 --rate 239.76 --output DisplayPort-1 --mode 1920x1080 --rate 60.00 --above DisplayPort-0
 
 #japanese input
 exec --no-startup-id fcitx -dr
@@ -404,7 +423,10 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
-exec --no-startup-id sleep 1 && feh --bg-fill /usr/share/endeavouros/backgrounds/wp4063162.jpg
+#exec --no-startup-id sleep 1 && feh --bg-fill /usr/share/endeavouros/backgrounds/wp4063162.jpg
+
+exec --no-startup-id sleep 1 && feh --bg-center /usr/share/endeavouros/backgrounds/bottom.png /usr/share/endeavouros/backgrounds/top.png
+
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
@@ -498,7 +520,7 @@ set $yellowbrown	#e1b700
 
 # define colors for windows:
 #class		        	border		bground		text		indicator	child_border
-client.focused		    	$lightblue	$darkblue	$white		$mediumgrey	$mediumgrey
+client.focused		    	$lightble	$darkblue	$white		$mediumgrey	$mediumgrey
 client.unfocused	    	$darkblue	$darkblue	$grey		$darkgrey	$darkgrey
 client.focused_inactive		$darkblue	$darkblue	$grey		$black		$black
 client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
@@ -512,7 +534,9 @@ client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
 bar {
 		font pango: Noto Sans Regular 10
 		status_command i3blocks -c ~/.config/i3/i3blocks.conf
-	    	position top
+	    	position bottom
+            mode hide
+            modifier Mod5 
 	    	i3bar_command i3bar --transparency
 # it could be that you have no primary display set: set one (xrandr --output <output> --primary)
 # reference: https://i3wm.org/docs/userguide.html#_tray_output
@@ -533,7 +557,7 @@ strip_workspace_numbers yes
 #                          		border 		        bg		txt		indicator
 		#focused_workspace	$mediumgrey	   	$grey		$darkgrey	$purple
 		focused_workspace	$mediumgrey	   	#00000000		$grey	$purple
-		active_workspace	$lightblue      	$mediumgrey	$darkgrey	$purple
+		active_workspace	#00000000      	$mediumgrey	$darkgrey	$purple
 		#inactive_workspace	$darkgrey   		$darkgrey	$grey		$purple
 		inactive_workspace	#00000000   		#00000000	$darkgrey		$purple
 		urgent_workspace	$urgentred	    	$urgentred	$white		$purple
