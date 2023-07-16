@@ -1,0 +1,1 @@
+paru -S firefox gnome-calendar ffmpeg git kicad qucs-s structorizer superslicer freecad sweethome3d openscad lxapperance qt5ct mpv ranger rofi flameshot xorg ttf-mplus ttf-all-the-icons zsh yt-dlp fcitx fcitx fcitx-configtool fcitx-mozc fcitx-qt5 fcitx-qt6 arc-gtk-theme spotify-adblock spotify discord-canary gimp galculator obs-studio tor torbrowser-launcher mailspring
