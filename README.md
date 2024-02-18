@@ -10,6 +10,7 @@ those are my dottofairu.
 
 - Adwaita-qt
 - Arc theme
+- ablert
 - Firefox
 - gnome-calendar
 - fcitx + mozc

@@ -4,3 +4,4 @@ fi
 
 export QT_QPA_PLATFORMTHEME=qt5ct
 
+export BROWSER='/usr/bin/thorium-browser'
